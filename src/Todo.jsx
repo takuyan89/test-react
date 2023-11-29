@@ -61,7 +61,7 @@ export const Todo = () => {
         setIncompleteTodos(newIncompleteTodos);
       }
     } else {
-      console.error("エラー");
+      console.error("エラー ");
     }
   };
 
