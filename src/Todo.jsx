@@ -24,7 +24,7 @@ export const Todo = () => {
       .from("todo")
       .insert({ title: title });
     if (!error) {
-      fetchDate(); // 新しいタスクを追加した後にデータを再取得する
+      fetchDate();
     }
   }
 
@@ -54,15 +54,14 @@ export const Todo = () => {
         .eq("id", taskIdToDelete);
 
       if (error) {
-        console.error("タスクの削除中にエラーが発生しました：", error.message);
+        console.error("エラー", error.message);
       } else {
-        // 削除されたタスクを取り除くためにステートを更新
         const newIncompleteTodos = [...incompleteTodos];
         newIncompleteTodos.splice(index, 1);
         setIncompleteTodos(newIncompleteTodos);
       }
     } else {
-      console.error("タスクのIDが無効です。");
+      console.error("エラー");
     }
   };
 
